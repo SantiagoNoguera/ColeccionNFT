@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción con Contrato NFT</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .nft-card {
+            transition: transform 0.2s;
+        }
+        .nft-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-xl mx-auto bg-white shadow-md rounded p-6">
+        <h1 class="text-2xl font-bold mb-4">Interacción con Contrato NFT</h1>
+        <button id="connectButton" class="bg-blue-500 text-white px-4 py-2 rounded mb-4">Conectar con MetaMask</button>
+        <p id="walletAddress" class="text-gray-700 mb-4"></p> <!-- Dirección de la billetera -->
+
+        <!-- Contenedor de acciones ocultas -->
+        <div id="actionsContainer" class="hidden">
+            <div class="mb-4">
+                <input id="nftUri" type="text" placeholder="URI del NFT" class="border p-2 w-full mb-2">
+                <button id="createNFTButton" class="bg-green-500 text-white px-4 py-2 rounded">Crear NFT</button>
+            </div>
+
+            <div class="mb-4">
+                <button id="getNFTsButton" class="bg-gray-500 text-white px-4 py-2 rounded">Ver mis NFTs</button>
+                <div id="nftList" class="grid grid-cols-1 gap-4 mt-4"></div>
+            </div>
+
+            <div class="mb-4">
+                <input id="transferTokenId" type="text" placeholder="ID del NFT" class="border p-2 w-full mb-2">
+                <input id="transferAddress" type="text" placeholder="Dirección de destino" class="border p-2 w-full mb-2">
+                <button id="transferNFTButton" class="bg-red-500 text-white px-4 py-2 rounded">Transferir NFT</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
